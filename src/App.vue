@@ -16,35 +16,35 @@
 
       <v-btn
         v-on:click="currentPage = 'About'"
-        flat
+        color='#dddad0'
       >
         <span class="mr-2">About</span>
       </v-btn>
 
       <v-btn
         v-on:click="currentPage = 'Algorithms'"
-        flat
+        color='#dddad0'
       >
         <span class="mr-2">Algoritms</span>
       </v-btn>
 
       <v-btn
         v-on:click="currentPage = 'Letter'"
-        flat
+        color='#dddad0'
       >
         <span class="mr-2">A Letter to You</span>
       </v-btn>
 
       <v-btn
         v-on:click="currentPage = 'Resume'"
-        flat
+        color='#dddad0'
       >
         <span class="mr-2">Resume</span>
       </v-btn>
 
       <v-btn
         v-on:click="currentPage = 'Login'"
-        flat
+        color='#dddad0'
       >
         <span class="mr-2">login</span>
       </v-btn>
@@ -82,5 +82,24 @@ export default {
   .v-toolbar{
     color: #3c3b3a;
     background: #dacfb3;
+  }
+  .d-blue{
+    background: #0f2343;
+    color: #3c3b3a;
+  }
+  .l-blue{
+    background: #21496c;
+    color: #3c3b3a;
+  }
+  .orange{
+    background: #db8420;
+    color: #3c3b3a;
+  }
+  .yellow{
+    background: #c43912;
+    color: #3c3b3a;
+  }
+  .cream{
+    background: #3c3b3a;
   }
 </style>
