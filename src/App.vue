@@ -25,7 +25,7 @@
         v-on:click="currentPage = 'Algorithms'"
         color='#dddad0'
       >
-        <span class="mr-2">Algoritms</span>
+        <span class="mr-2">Algorithms</span>
       </v-btn>
 
       <v-btn

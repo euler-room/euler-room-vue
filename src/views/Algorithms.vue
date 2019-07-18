@@ -1,7 +1,6 @@
-    Algorithms,
 <template>
     <v-content>
       <div>BLARGH!!!</div>
-      <Algoritms/>
+      <Algorithms/>
     </v-content>
 </template>
