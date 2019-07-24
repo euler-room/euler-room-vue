@@ -13,16 +13,22 @@
         ></v-img>
       </v-flex>
 
-      <v-flex mb-4>
-
-      </v-flex>
-
       <v-flex
         mb-5
         xs12
       >
-        <h2 class="headline font-weight-bold mb-3">About Me</h2>
-
+        <h2 class=" headline font-weight-bold">About Me</h2>
+        <v-flex >
+          <p>
+            Experienced Software Engineer with a demonstrated history of working in the Web Development industry. Skilled in Computer Science, Test Automation, Databases, and Ruby/Ruby on Rails. Strong engineering professional with a Bachelor of Science (BS) focused in Computer Science from Eastern Washington University.
+          </p>
+        </v-flex>
+        <v-flex >
+        <h2 class=" headline font-weight-bold">About This App</h2>
+          <p>
+            (Work in progress) - Ruby on Rails API hosted on Heroku. Postgres DB hosted on Heroku. VueJS frontend hosted on Heroku.
+          </p>
+        </v-flex>
         <v-layout justify-center>
           <a
             v-for="(next, i) in about"
@@ -35,6 +41,8 @@
           </a>
         </v-layout>
       </v-flex>
+
+
     </v-layout>
   </v-container>
 </template>

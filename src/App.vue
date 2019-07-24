@@ -53,6 +53,9 @@
     <v-content>
       <About v-if="this.currentPage == 'About'"/>
       <Algorithms v-if="this.currentPage == 'Algorithms'"/>
+      <Login v-if="this.currentPage == 'Login'"/>
+      <Letter v-if="this.currentPage == 'Letter'"/>
+      <Resume v-if="this.currentPage == 'Resume'"/>
     </v-content>
   </v-app>
 </template>
@@ -60,12 +63,18 @@
 <script>
 import About from './components/About.vue';
 import Algorithms from './components/Algorithms.vue';
+import Login from './components/Login.vue';
+import Letter from './components/Letter.vue';
+import Resume from './components/Resume.vue';
 
 export default {
   name: 'App',
   components: {
     About,
     Algorithms,
+    Login,
+    Letter,
+    Resume,
   },
   data() {
     return {
