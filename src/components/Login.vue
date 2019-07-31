@@ -17,11 +17,66 @@
         mb-5
         xs12
       >
-        <h2 class=" headline font-weight-bold">Resume</h2>
         <v-flex >
           <p>
-            This page is under construction. When complete, it will return a JSON Web Token from a Rails API which will then be used to authenticate the user for subsequent requests.
+            This page is under construction. When complete,
+            it will return a JSON Web Token from a Rails API
+            which will then be used to authenticate the user for subsequent requests.
           </p>
+          <v-container
+            fluid
+            fill-height
+          >
+            <v-layout
+              align-center
+              justify-center
+            >
+              <v-flex
+                xs12
+                sm8
+                md4
+              >
+                <v-card class="elevation-12">
+                  <v-toolbar
+                    color="primary"
+                    dark
+                    flat
+                  >
+                    <v-toolbar-title>Login form</v-toolbar-title>
+                  </v-toolbar>
+                  <v-card-text>
+                    <v-form>
+                      <v-text-field
+                        v-model="login"
+                        label="Login"
+                        name="login"
+                        prepend-icon="person"
+                        type="text"
+                      ></v-text-field>
+
+                      <v-text-field
+                        v-model="password"
+                        id="password"
+                        label="Password"
+                        name="password"
+                        prepend-icon="lock"
+                        type="password"
+                      ></v-text-field>
+                    </v-form>
+                  </v-card-text>
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn
+                      color="primary"
+                      v-on:click="authenticate"
+                    >
+                      Login
+                    </v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-flex>
+            </v-layout>
+          </v-container>
         </v-flex>
       </v-flex>
 
@@ -31,10 +86,17 @@
 </template>
 
 <script>
+
 export default {
   data: () => ({
-
+    login: '',
+    password: '',
   }),
+  methods: {
+    authenticate() {
+      alert('logged in!!');
+    },
+  },
 };
 </script>
 

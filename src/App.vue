@@ -16,35 +16,35 @@
 
       <v-btn
         v-on:click="currentPage = 'About'"
-        color='#dddad0'
+        color="primary"
       >
         <span class="mr-2">About</span>
       </v-btn>
 
       <v-btn
         v-on:click="currentPage = 'Algorithms'"
-        color='#dddad0'
+        color="primary"
       >
         <span class="mr-2">Algorithms</span>
       </v-btn>
 
       <v-btn
         v-on:click="currentPage = 'Letter'"
-        color='#dddad0'
+        color="primary"
       >
         <span class="mr-2">A Letter to You</span>
       </v-btn>
 
       <v-btn
         v-on:click="currentPage = 'Resume'"
-        color='#dddad0'
+        color="primary"
       >
         <span class="mr-2">Resume</span>
       </v-btn>
 
       <v-btn
         v-on:click="currentPage = 'Login'"
-        color='#dddad0'
+        color="primary"
       >
         <span class="mr-2">login</span>
       </v-btn>
