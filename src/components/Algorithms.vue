@@ -56,10 +56,10 @@ export default {
     async fetchProblems() {
       axios({
         method: 'get',
-        url: 'https://euler-room-api.herokuapp.com/problems',
+        url: '/problems',
       })
         .then((response) => {
-          console.log(response.data.data);
+          // console.log(process.env);
           this.problems = response.data.data;
         }, (error) => {
           console.log(error);

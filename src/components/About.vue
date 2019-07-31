@@ -20,13 +20,18 @@
         <h2 class=" headline font-weight-bold">About Me</h2>
         <v-flex >
           <p>
-            Experienced Software Engineer with a demonstrated history of working in the Web Development industry. Skilled in Computer Science, Test Automation, Databases, and Ruby/Ruby on Rails. Strong engineering professional with a Bachelor of Science (BS) focused in Computer Science from Eastern Washington University.
+            Experienced Software Engineer with a demonstrated history of working
+            in the Web Development industry. Skilled in Computer Science, Test
+            Automation, Databases, and Ruby/Ruby on Rails. Strong engineering
+            professional with a Bachelor of Science (BS) focused in Computer
+            Science from Eastern Washington University.
           </p>
         </v-flex>
         <v-flex >
         <h2 class=" headline font-weight-bold">About This App</h2>
           <p>
-            (Work in progress) - Ruby on Rails API hosted on Heroku. Postgres DB hosted on Heroku. VueJS frontend hosted on Heroku.
+            (Work in progress) - Ruby on Rails API hosted on Heroku. Postgres
+            DB hosted on Heroku. VueJS frontend hosted on Heroku.
           </p>
         </v-flex>
         <v-layout justify-center>

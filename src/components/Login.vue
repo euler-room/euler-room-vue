@@ -86,6 +86,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 
 export default {
   data: () => ({
@@ -94,7 +95,8 @@ export default {
   }),
   methods: {
     authenticate() {
-      alert('logged in!!');
+      console.log(axios.defaults);
+      console.log(process.env.NODE_ENV);
     },
   },
 };

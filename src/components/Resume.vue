@@ -20,7 +20,8 @@
         <h2 class=" headline font-weight-bold">Resume</h2>
         <v-flex >
           <p>
-            This page is under construction. When complete, it will display the most recent version of my Resume.
+            This page is under construction. When complete, it will display the
+            most recent version of my Resume.
           </p>
         </v-flex>
       </v-flex>

@@ -20,7 +20,8 @@
         <h2 class=" headline font-weight-bold">Letter to You</h2>
         <v-flex >
           <p>
-            This page is under construction. When complete, it will display a cover letter personalized to the user who has logged in.
+            This page is under construction. When complete, it will display a
+            cover letter personalized to the user who has logged in.
           </p>
         </v-flex>
       </v-flex>
