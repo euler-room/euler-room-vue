@@ -56,7 +56,7 @@ export default {
     async fetchProblems() {
       axios({
         method: 'get',
-        url: 'http://localhost:3000/problems',
+        url: 'https://euler-room-api.herokuapp.com/problems',
       })
         .then((response) => {
           console.log(response.data.data);
