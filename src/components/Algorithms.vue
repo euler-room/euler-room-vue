@@ -17,17 +17,39 @@
               :key="i"
             >
               <template v-slot:header >
-                <h3>{{problem.attributes.title}}</h3>
+                <h2>{{problem.attributes.title}}</h2>
               </template>
               <v-card>
                 <v-card-text>
                   <tt application v-html="problem.attributes.description"></tt>
                   <br/>
+                  <v-expand-transition>
+                    <div v-show="solutionIsVisible(problem.id)">
+                      <hr/>
+                      <br/>
+                      <h3>&nbsp&nbspSolution</h3>
+                      <br/><br/>
+                      <tt
+                        application
+                        v-html="problem.attributes.solution_text"
+                      >
+                      </tt>
+                      <h3>&nbsp&nbspResult: {{ problem.attributes.solution }}</h3>
+                    </div>
+                  </v-expand-transition>
                   <v-btn
+                    v-show="!solutionIsVisible(problem.id)"
                     light
-                    v-on:click="currentPage = 'About'"
+                    v-on:click="setSolutionVisibility(problem.id)"
                   >
-                    <span>Solution</span>
+                    <span>Show Solution</span>
+                  </v-btn>
+                  <v-btn
+                    v-show="solutionIsVisible(problem.id)"
+                    light
+                    v-on:click="setSolutionVisibility('none')"
+                  >
+                    <span>Hide Solution</span>
                   </v-btn>
                 </v-card-text>
               </v-card>
@@ -48,11 +70,18 @@ export default {
   },
   data: () => ({
     problems: [],
+    currentSolution: '',
   }),
   created() {
     this.fetchProblems();
   },
   methods: {
+    solutionIsVisible(problemId) {
+      return this.currentSolution === `solution-${problemId}`;
+    },
+    setSolutionVisibility(problemId) {
+      this.currentSolution = `solution-${problemId}`;
+    },
     async fetchProblems() {
       axios({
         method: 'get',
