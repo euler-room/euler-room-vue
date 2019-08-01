@@ -27,14 +27,14 @@
                     <div v-show="solutionIsVisible(problem.id)">
                       <hr/>
                       <br/>
-                      <h3>&nbsp&nbspSolution</h3>
+                      <h3>&nbsp;&nbsp;Solution</h3>
                       <br/><br/>
                       <tt
                         application
                         v-html="problem.attributes.solution_text"
                       >
                       </tt>
-                      <h3>&nbsp&nbspResult: {{ problem.attributes.solution }}</h3>
+                      <h3>&nbsp;&nbsp;Result: {{ problem.attributes.solution }}</h3>
                     </div>
                   </v-expand-transition>
                   <v-btn
@@ -56,6 +56,7 @@
             </v-expansion-panel-content>
           </v-expansion-panel>
         </v-layout>
+        <br/><h4 class="headline  mb-1">...more to come...</h4>
       </v-flex>
     </v-layout>
   </v-container>
