@@ -95,13 +95,12 @@ export default {
       axios({
         method: 'get',
         url: '/problems',
-      })
-        .then((response) => {
-          // console.log(process.env);
-          this.problems = response.data.data;
-        }, (error) => {
-          console.log(error);
-        });
+      }).then((response) => {
+        // console.log(process.env);
+        this.problems = response.data.data;
+      }, (error) => {
+        console.log(error);
+      });
     },
   },
 };

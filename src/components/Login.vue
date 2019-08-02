@@ -47,9 +47,9 @@
                   <v-card-text>
                     <v-form>
                       <v-text-field
-                        v-model="login"
-                        label="Login"
-                        name="login"
+                        v-model="username"
+                        label="username"
+                        name="username"
                         prepend-icon="person"
                         type="text"
                       ></v-text-field>
@@ -90,13 +90,28 @@ import axios from 'axios';
 
 export default {
   data: () => ({
-    login: '',
+    username: '',
     password: '',
   }),
   methods: {
-    authenticate() {
-      console.log(axios.defaults);
-      console.log(process.env.NODE_ENV);
+    async authenticate() {
+      axios({
+        method: 'post',
+        url: '/users/login',
+        data: {
+          data: {
+            attributes: {
+              username: this.username,
+              password: this.password,
+            },
+          },
+        },
+      }).then((response) => {
+        console.log(response);
+        this.problems = response.data.data;
+      }, (error) => {
+        console.log(error);
+      });
     },
   },
 };

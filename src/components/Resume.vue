@@ -19,10 +19,7 @@
       >
         <h2 class=" headline font-weight-bold">Resume</h2>
         <v-flex >
-          <p>
-            This page is under construction. When complete, it will display the
-            most recent version of my Resume.
-          </p>
+          <embed src="https://euler-room.s3.us-east-2.amazonaws.com/pdfs/GJB-reume-20190802.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" style="border: none;" width="720" height="960" />
         </v-flex>
       </v-flex>
 
