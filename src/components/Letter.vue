@@ -12,30 +12,57 @@
           height="200"
         ></v-img>
       </v-flex>
-
+        <v-flex
+        mb-5
+        xs12
+        v-if="isLoggedIn"
+      >
+        <h2 class=" headline font-weight-bold">A Cover Letter for {{ currentUser.username }}</h2>
+        <embed
+          :src="`${currentUser.cover_letter_url}#toolbar=0&navpanes=0&scrollbar=0`"
+          type="application/pdf"
+          style="border: none;"
+          :width="`${coverLetterWidth}`"
+          :height="`${coverLetterHeight}`" />
+      </v-flex>
       <v-flex
         mb-5
         xs12
+        v-if="!isLoggedIn"
       >
-        <h2 class=" headline font-weight-bold">Letter to You</h2>
         <v-flex >
           <p>
-            This page is under construction. When complete, it will display a
-            cover letter personalized to the user who has logged in.
+            You must be logged in to view your cover letter.
           </p>
         </v-flex>
       </v-flex>
-
-
     </v-layout>
   </v-container>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   data: () => ({
-
+    coverLetterUrl: '',
+    coverLetterDimensions: {
+      portrait: { width: '720', height: '960' },
+      landscape: { width: '960', height: '720' },
+    },
   }),
+  computed: {
+    ...mapGetters([
+      'currentUser',
+      'isLoggedIn',
+    ]),
+    coverLetterHeight() {
+      return this.coverLetterDimensions[this.currentUser.cover_letter_orientation].height;
+    },
+    coverLetterWidth() {
+      return this.coverLetterDimensions[this.currentUser.cover_letter_orientation].width;
+    },
+  },
 };
 </script>
 

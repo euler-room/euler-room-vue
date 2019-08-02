@@ -68,7 +68,7 @@
                     <v-spacer></v-spacer>
                     <v-btn
                       color="primary"
-                      v-on:click="authenticate"
+                      v-on:click="authenticate(username, password)"
                     >
                       Login
                     </v-btn>
@@ -86,32 +86,26 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
+import store from '../store';
+
 
 export default {
   data: () => ({
     username: '',
     password: '',
   }),
+  computed: {
+
+  },
   methods: {
-    async authenticate() {
-      axios({
-        method: 'post',
-        url: '/users/login',
-        data: {
-          data: {
-            attributes: {
-              username: this.username,
-              password: this.password,
-            },
-          },
-        },
-      }).then((response) => {
-        console.log(response);
-        this.problems = response.data.data;
-      }, (error) => {
-        console.log(error);
-      });
+    redirectTo(destination) {
+      this.$emit('loginListener', destination);
+    },
+    authenticate(username, password) {
+      store.dispatch('login', { data: { attributes: { username, password } } })
+        .then(this.redirectTo('About'))
+        .catch(err => console.log(err));
     },
   },
 };

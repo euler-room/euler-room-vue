@@ -29,10 +29,11 @@
       </v-btn>
 
       <v-btn
+        v-if="isLoggedIn"
         v-on:click="currentPage = 'Letter'"
         color="primary"
       >
-        <span class="mr-2">A Letter to You</span>
+        <span class="mr-2">Cover Letter</span>
       </v-btn>
 
       <v-btn
@@ -43,17 +44,25 @@
       </v-btn>
 
       <v-btn
+        v-if="!isLoggedIn"
         v-on:click="currentPage = 'Login'"
         color="primary"
       >
         <span class="mr-2">login</span>
+      </v-btn>
+      <v-btn
+        v-if="isLoggedIn"
+        v-on:click="logout()"
+        color="primary"
+      >
+        <span class="mr-2">logout {{ currentUser.username }}</span>
       </v-btn>
     </v-toolbar>
 
     <v-content>
       <About v-if="this.currentPage == 'About'"/>
       <Algorithms v-if="this.currentPage == 'Algorithms'"/>
-      <Login v-if="this.currentPage == 'Login'"/>
+      <Login v-on:loginListener="loginListener" v-if="this.currentPage == 'Login'"/>
       <Letter v-if="this.currentPage == 'Letter'"/>
       <Resume v-if="this.currentPage == 'Resume'"/>
     </v-content>
@@ -61,11 +70,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import About from './components/About.vue';
 import Algorithms from './components/Algorithms.vue';
 import Login from './components/Login.vue';
 import Letter from './components/Letter.vue';
 import Resume from './components/Resume.vue';
+import store from './store';
 
 export default {
   name: 'App',
@@ -75,6 +86,21 @@ export default {
     Login,
     Letter,
     Resume,
+  },
+  methods: {
+    async logout() {
+      store.dispatch('logout');
+    },
+    loginListener(reply) {
+      this.currentPage = reply;
+    },
+  },
+  computed: {
+    ...mapGetters([
+      'isLoggedIn',
+      'authStatus',
+      'currentUser',
+    ]),
   },
   data() {
     return {
