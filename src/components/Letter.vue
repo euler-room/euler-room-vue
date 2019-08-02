@@ -47,8 +47,8 @@ export default {
   data: () => ({
     coverLetterUrl: '',
     coverLetterDimensions: {
-      portrait: { width: '720', height: '960' },
-      landscape: { width: '960', height: '720' },
+      portrait: { width: '852', height: '1050' },
+      landscape: { width: '852', height: '640' },
     },
   }),
   computed: {
