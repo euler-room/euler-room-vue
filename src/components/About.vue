@@ -23,7 +23,7 @@
             Experienced Software Engineer with a demonstrated history of working
             in the Web Development industry. Skilled in Computer Science, Test
             Automation, Databases, and Ruby/Ruby on Rails. Strong engineering
-            professional with a Bachelor of Science (BS) focused in Computer
+            professional with a Bachelor of Science focused in Computer
             Science from Eastern Washington University.
           </p>
         </v-flex>
